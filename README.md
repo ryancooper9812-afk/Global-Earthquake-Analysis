@@ -28,20 +28,22 @@ I checked missing values, duplicates, event types, data types, and coordinate ra
 The largest category in the supplied tectonic zone field is **ring_of_fire_pacific**, with **8,388 events (83.9%)**. Magnitude and depth have almost no linear correlation in this sample. The monthly line chart shows how counts vary over the observed date range, but partial first/last months and sample selection can affect interpretation.
 
 ## Visualizations
+The charts below are lightweight SVG previews reconstructed from the PDF and reported summary values. Some plot points and monthly values are approximate, rather than exact exports of the original charts. For the original figures, see [the five-page charts PDF](Global_Earthquake_All_Charts.pdf). Run `earthquake_analysis.ipynb` to generate precise PNG charts from the dataset.
+
 ### Earthquakes by tectonic region
-![Earthquakes by region](visualizations/earthquakes_by_region.png)
+![Earthquakes by region](visualizations/earthquakes_by_region.svg)
 
 ### Magnitude distribution
-![Magnitude distribution](visualizations/magnitude_distribution.png)
+![Magnitude distribution](visualizations/magnitude_distribution.svg)
 
 ### Magnitude vs depth
-![Magnitude vs depth](visualizations/magnitude_vs_depth.png)
+![Magnitude vs depth](visualizations/magnitude_vs_depth.svg)
 
 ### Earthquakes over time
-![Earthquakes over time](visualizations/earthquakes_over_time.png)
+![Earthquakes over time](visualizations/earthquakes_over_time.svg)
 
 ### Correlation heatmap
-![Magnitude depth correlation](visualizations/correlation_heatmap.png)
+![Magnitude depth correlation](visualizations/correlation_heatmap.svg)
 
 ## Conclusion
 Python made it possible to clean a real-world dataset, sort and filter earthquake events, compare tectonic zones, calculate summary statistics, and visualize patterns. These results describe the records in this dataset and should not be used to predict earthquakes or infer global rates without verifying sampling and provenance.
