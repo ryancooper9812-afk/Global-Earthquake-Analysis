@@ -4,6 +4,8 @@
 How can I use Python to gain insights into earthquake magnitude, depth, tectonic location, and frequency?
 
 ## Dataset
+**Source/provenance note:** The original CSV was supplied by the project author. Its original public download URL has not been established; the USGS link below is a reference, not a verified source for this exact file. This is a remaining provenance limitation under the assignment's public-source requirement.
+
 This project uses the provided `global_earthquakes_seismic.csv` file (10,000 rows, 25 columns). The exact original download source of this file has **not been verified**. The [USGS Earthquake Catalog](https://earthquake.usgs.gov/earthquakes/search/) is a reputable reference for public earthquake data, but it is not confirmed as the source of this specific file. The dataset includes derived tectonic classification fields. Results apply to the supplied sample, not necessarily all global earthquakes.
 
 ## Tools
