@@ -29,11 +29,22 @@ jobs:
         run: python clean_earthquake_data.py
       - name: Generate five real Matplotlib and Seaborn charts
         run: MPLBACKEND=Agg python earthquake_analysis.py
+      - name: Point README to real chart PNGs
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path("README.md")
+          text = p.read_text()
+          for name in ["earthquakes_by_region", "magnitude_distribution", "magnitude_vs_depth", "earthquakes_over_time", "correlation_heatmap"]:
+              text = text.replace(f"visualizations/{name}.svg", f"visualizations/{name}.png")
+          text = text.replace("The charts below are lightweight SVG previews reconstructed from the PDF and reported summary values. Some plot points and monthly values are approximate, rather than exact exports of the original charts. For the original figures, see [the five-page charts PDF](Global_Earthquake_All_Charts.pdf). Run `earthquake_analysis.ipynb` to generate precise PNG charts from the dataset.", "These five charts were generated from the uploaded CSV with Matplotlib and Seaborn using `earthquake_analysis.py`.")
+          p.write_text(text)
+          PY
       - name: Commit generated dataset and charts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add global_earthquakes_cleaned.csv visualizations/*.png
+          git add README.md global_earthquakes_cleaned.csv visualizations/*.png
           if ! git diff --cached --quiet; then
             git commit -m "Generate cleaned earthquake dataset and real chart PNGs"
             git push
