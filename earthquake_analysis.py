@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df = pd.read_csv("global_earthquakes_cleaned.csv")
-df["time"] = pd.to_datetime(df["time"], utc=True)
+df["time"] = pd.to_datetime(df["time"], utc=True, format="mixed")
 out = Path("visualizations")
 out.mkdir(exist_ok=True)
 sns.set_theme(style="whitegrid")
